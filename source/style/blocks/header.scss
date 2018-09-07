@@ -53,7 +53,6 @@
         top: 0;
         right: rem(-300px);
         transition: .8s;
-      
         height: rem(250px);
         @include center;
         background-color: rgba(255, 255, 255, 1);
@@ -219,6 +218,7 @@
             }
         }
     }
+
     @include phones {
         margin-right: rem(15px);
         margin-left: rem(15px);
@@ -305,9 +305,9 @@
     display: flex;
     align-items: center;
     margin-right: rem(35px);
+
     @include phones {
         margin-right: rem(20px);
-        
     }
 }
 

@@ -16,7 +16,11 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
   </head>
   <body>   
-    <div class="wrapper">
+    <div class="preloader">
+      <div class="preloader__img"></div><img class="preloader__pic" src="./assets/img/tail-spin.svg">
+      <div class="preloader__count" id="count">0%</div>
+    </div>
+    <div class="wrapper visuallyhidden">
       <header class="header">
         <div class="header__row header__row_top"><a class="header__logo" href="https://www.armed.ru/"><img class="header__logo-img" src="./assets/img/logo.png" alt="Лого"></a><a class="header__geo" href="#">Москва</a>
               <nav class="navigation"><a class="navigation__cross" href=""></a>

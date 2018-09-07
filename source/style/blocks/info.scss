@@ -1,6 +1,6 @@
 .info {
     width: 100%;
-   height: rem(554px);
+    height: rem(554px);
     background: url("../img/infobg.jpg");
     background-size: cover;
     background-position: center;
@@ -10,7 +10,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 
 .info__text {
@@ -22,8 +21,8 @@
     flex-direction: column;
     margin-bottom: rem(58px);
     padding: rem(20px) rem(20px);
+
     @include phones {
-       
         margin-bottom: rem(38px);
     }
 }
@@ -39,32 +38,36 @@
 
 .info__subtitle {
     font-weight: 400;
-    color:#0A1612;
+    color: #0A1612;
     font-size: rem(24px);
     text-align: center;
 }
-.info__more, .info__catalog {
+
+.info__more,
+.info__catalog {
     width: rem(190px);
     height: rem(45px);
     @include center;
     transition: .3s;
+
     &:hover {
         transform: scale(1.04);
     }
 }
+
 // .info__buttons {
-    
 // }
 .info__more {
     margin-bottom: rem(24px);
-    background-color:#CA2032;
-    color:#fff;
+    background-color: #CA2032;
+    color: #fff;
     font-family: 'Exo 2', sans-serif;
     font-weight: 500;
-    font-size: rem(16px); 
+    font-size: rem(16px);
 }
+
 .info__catalog {
-    background-color:#fff;
+    background-color: #fff;
     font-size: rem(14px);
-    color:#CA2032;
+    color: #CA2032;
 }
