@@ -1,12 +1,31 @@
 header.header
-  .container.container_header
-    a.header__logo(href="#")
+  .header__row.header__row_top
+    a.header__logo(href="https://www.armed.ru/")
       img.header__logo-img(src='./assets/img/logo.png' alt='Лого')
+    a.header__geo(href="#") Москва
+    +nav('navigation', nav, 0)   
+  .header__row.header__row_bottom
+    .header__catalog Каталог
+      //- ul.header__catalog-popup
+      //-   li.header__catalog-popup-item Пункт1
+      //-   li.header__catalog-popup-item Пункт2
+      //-   li.header__catalog-popup-item Пункт3
+      //-   li.header__catalog-popup-item Пункт4
+    form.header__search(action="" method="post")
+      input.header__input(type="search" placeholder="Поиск по сайту")
+      input.header__input-submit(type="submit" value="")
     .header__contacts
-      ul.header__contacts-list
-        li.header__contacts-item
-          a.header__phones(href='tel:+74997777777') +7(499)777-77-77
-        li.header__contacts-item
-          a.header__phones(href='tel:+74997777777') +7(499)777-77-77
-      a.header__feedback(href="#") Обратная связь
+      a.header__phones(href='tel:+74951062676') 8 (495) 106-26-76
+      a.header__phones(href='tel:+78002006734') 8 (800) 200-67-34
+    ul.header__icons
+      li.header__icons-item
+        a.header__comparison(href="")
+        .header__comparison-counter 2
+      li.header__icons-item
+        a.header__favorites(href="")        
+      li.header__icons-item
+        a.header__basket(href="")
+        .header__basket-counter 2
+    .header__profile Личный<br>кабинет
+    
            

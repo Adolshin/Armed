@@ -1,45 +1,40 @@
-.products
-    ul.products__list
-        li.products__item
-            .products__img
-                img.products__img-pic(src="./assets/img/product.png", alt="Фото")
-            .products__desc Самый клевый чайник, который надо купить!
-            .products__row
-                .products__price 1 900 р.
-                .products__basket
-                    img.products__basket-pic(src="./assets/img/basket.png", alt="")
-        li.products__item
-            .products__img
-                img.products__img-pic(src="./assets/img/product.png", alt="Фото")
-            .products__desc Самый клевый чайник, который надо купить!
-            .products__row
-                .products__price 1 900 р.
-                .products__basket
-                    img.products__basket-pic(src="./assets/img/basket.png", alt="")
-        li.products__item
-            .products__img
-                img.products__img-pic(src="./assets/img/product.png", alt="Фото")
-            .products__desc Самый клевый чайник, который надо купить!
-            .products__row
-                .products__price 1 900 р.
-                .products__basket
-                    img.products__basket-pic(src="./assets/img/basket.png", alt="")
-        li.products__item
-            .products__img
-                img.products__img-pic(src="./assets/img/product.png", alt="Фото")
-            .products__desc Самый клевый чайник, который надо купить!
-            .products__row
-                .products__price 1 900 р.
-                .products__basket
-                    img.products__basket-pic(src="./assets/img/basket.png", alt="")
-        li.products__item
-            .products__img
-                img.products__img-pic(src="./assets/img/product.png", alt="Фото")
-            .products__desc Самый клевый чайник, который надо купить!
-            .products__row
-                .products__price 1 900 р.
-                .products__basket
-                    img.products__basket-pic(src="./assets/img/basket.png", alt="")    
-    .products__pagination
-        +pagination(7, 3)
+section.products
+    .products__left
+        .products__quartz
+            .products__quartz-block
+                .products__quartz-img
+                    img.products__quartz-pic(src="./assets/img/quartz-img.png", alt="")
+                .products__quartz-text
+                    .products__quartz-title Экокварц
+                    .products__quartz-desc Обеззараживатели воздуха с выгодой до #[span 15%]
+            a.products__details(href="") Подробнее
+    .products__right
+        .products__row
+            .products__elly
+                .products__elly-title НОВИНКА!
+                .products__elly-text Итальянский компрессионный трикотаж Elly
+                img.products__elly-pic(src="./assets/img/elly.png", alt="")
+                a.products__details(href="") Подробнее &gt;
+            .products__wheelchair
+                .products__wheelchair-text
+                    .products__wheelchair-title Электрическое<br>кресло-коляска #[span FS111A]
+                    .products__wheelchair-price Всего за #[span 74 499 ₽] #[span 49 000 ₽]
+                    a.products__details(href="") Подробнее &gt;
+                .products__wheelchair-img
+                    img.products__wheelchair-pic(src="./assets/img/wheelchair.png", alt="")
+        .products__row
+            .products__oxygen
+                img.products__oxygen-pic1(src="./assets/img/oxygen-img1.png", alt="")
+                img.products__oxygen-pic2(src="./assets/img/oxygen-img2.png", alt="")
+                .products__oxygen-text
+                    .products__oxygen-title НАБОР ДЛЯ ПРИГОТОВЛЕНИЯ O#[sup 2] КОКТЕЙЛЕЙ В ПОДАРОК
+                    .products__oxygen-desc При покупке кислородного концентратора ™АРМЕД
+                    a.products__details(href="") Подробнее
+            .products__wash
+                .products__wash-title Комплект для мытья головы
+                .products__wash-text Качественный уход за лежачим больным за #[span 1 790 ₽]
+                img.products__wash-pic(src="./assets/img/elly.png", alt="")
+                a.products__details(href="") Подробнее &gt;
+
+
 
