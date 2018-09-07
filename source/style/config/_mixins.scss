@@ -62,7 +62,9 @@
   @return $px / 16px+0rem;
 }
 
-
+@function vw($px) {
+  @return $px / 19.2px+0vw;
+}
 @mixin desktop {
   @media screen and (max-width: 1200px) {
     @content;

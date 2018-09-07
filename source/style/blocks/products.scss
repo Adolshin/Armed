@@ -3,11 +3,21 @@
     height: rem(760px);
     display: flex;
     font-family: 'Rubik', sans-serif;
+
+    @include laptop {
+        flex-direction: column;
+        height: auto;
+    }
 }
 
 .products__left {
-    width: 25%;
+    width: 23%;
     height: 100%;
+
+    @include laptop {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .products__quartz {
@@ -22,11 +32,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 
     .products__details {
         position: relative;
         font-weight: 500;
-        font-size: rem(20px);
+        font-size: vw(20px);
         text-transform: uppercase;
         color: #fff;
 
@@ -47,6 +58,20 @@
                 right: 0;
             }
         }
+
+        @include laptop {
+            position: absolute;
+            font-size: rem(20px);
+            bottom: rem(60px);
+            right: 35%;
+            transform: translateX(43%);
+        }
+    }
+
+    @include laptop {
+        padding: rem(20px);
+        align-items: flex-end;
+        height: rem(440px);
     }
 }
 
@@ -56,6 +81,18 @@
     width: 100%;
     height: rem(604px);
     margin-bottom: rem(40px);
+
+    @include desktop {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    @include laptop {
+        height: auto;
+        margin-bottom: 0;
+        flex-direction: row;
+        justify-content: space-around;
+    }
 }
 
 .products__quartz-img {
@@ -64,11 +101,25 @@
     max-width: 30%;
     flex-shrink: 0;
     @include center;
+
+    @include desktop {
+        height: auto;
+        margin-bottom: rem(30px);
+    }
+
+    @include laptop {
+        margin-bottom: 0;
+        height: rem(400px);
+        width: 30%;
+        max-width: none;
+        flex-shrink: 1;
+    }
 }
 
 .products__quartz-pic {
-    width: 100%;
+    max-width: 100%;
     max-height: 100%;
+    flex-shrink: 0;
 }
 
 .products__quartz-text {
@@ -76,41 +127,65 @@
     flex-direction: column;
     align-items: center;
     margin-left: rem(10px);
+
+    @include desktop {
+        margin-left: 0;
+    }
+
+    @include laptop {
+        width: 70%;
+    }
 }
 
 .products__quartz-title {
     font-weight: 700;
-    font-size: rem(30px);
+    font-size: vw(30px);
     color: #fff;
     text-transform: uppercase;
     margin-bottom: rem(20px);
+
+    @include laptop {
+        font-size: rem(30px);
+    }
 }
 
 .products__quartz-desc {
     font-weight: 500;
-    font-size: rem(20px);
+    font-size: vw(20px);
     color: #fff;
     text-align: center;
 
     span {
-        font-size: rem(25px);
+        font-size: vw(25px);
+    }
+
+    @include desktop {
+        font-size: rem(14px);
+    }
+
+    @include laptop {
+        font-size: rem(20px);
+
+        span {
+            font-size: rem(25px);
+        }
     }
 }
 
 .products__right {
-    width: 75%;
+    width: 77%;
     height: 100%;
-}
-
-.products__row {
-    width: 100%;
-    height: 50%;
     display: flex;
+    flex-wrap: wrap;
+
+    @include laptop {
+        width: 100%;
+    }
 }
 
 .products__elly {
     width: 33.3%;
-    height: 100%;
+    height: 50%;
     padding: rem(10px);
     padding-top: rem(20px);
     padding-bottom: rem(35px);
@@ -121,7 +196,7 @@
 
     .products__details {
         font-weight: 500;
-        font-size: rem(20px);
+        font-size: vw(20px);
         text-transform: uppercase;
         color: #41ADA7;
         position: relative;
@@ -143,35 +218,69 @@
                 right: 0;
             }
         }
+
+        @include laptop {
+            font-size: rem(20px);
+        }
+    }
+
+    @include laptop {
+        height: rem(440px);
+    }
+
+    @include tablets {
+        order: 3;
+        width: 50%;
     }
 }
 
 .products__elly-title {
     font-weight: 500;
-    font-size: rem(30px);
+    font-size: vw(30px);
     margin-bottom: rem(10px);
     color: #41ADA7;
+
+    @include laptop {
+        font-size: rem(30px);
+    }
+    @include phones {
+       
+        font-size: rem(26px);
+    }
 }
 
 .products__elly-text {
     font-weight: 400;
-    font-size: rem(20px);
+    font-size: vw(20px);
     margin-bottom: rem(10px);
     color: #828282;
     text-align: center;
     max-width: 350px;
+
+    @include desktop {
+        font-size: rem(14px);
+    }
+
+    @include laptop {
+        font-size: rem(20px);
+    }
+}
+
+.products__elly-pic {
+    max-width: 95%;
 }
 
 .products__wheelchair {
     width: 66.6%;
-    height: 100%;
+    height: 50%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 
     .products__details {
         font-weight: 500;
-        font-size: rem(20px);
+        font-size: vw(20px);
         text-transform: uppercase;
         color: #6C8FD3;
         position: relative;
@@ -193,11 +302,24 @@
                 right: 0;
             }
         }
+
+        @include laptop {
+            font-size: rem(20px);
+        }
+    }
+
+    @include laptop {
+        height: rem(440px);
+    }
+
+    @include tablets {
+        order: 1;
+        width: 100%;
     }
 }
 
 .products__wheelchair-text {
-    padding-left: rem(35px);
+    padding-left: vw(35px);
     padding-bottom: rem(35px);
     height: 100%;
     display: flex;
@@ -208,7 +330,7 @@
 
 .products__wheelchair-title {
     font-weight: 500;
-    font-size: 30px;
+    font-size: vw(30px);
     color: #4F4F4F;
     margin-bottom: rem(20px);
     text-transform: uppercase;
@@ -216,37 +338,83 @@
     span {
         color: #6C8FD3;
     }
+
+    @include desktop {
+        position: absolute;
+        top: rem(20px);
+        left: 0;
+        right: 0;
+        text-align: center;
+        max-width: rem(450px);
+    }
+
+    @include laptop {
+        font-size: rem(30px);
+    }
+    @include phones {
+       
+        font-size: rem(26px);
+    }
 }
 
 .products__wheelchair-price {
     font-weight: 400;
-    font-size: rem(24px);
+    font-size: vw(24px);
     margin-bottom: rem(90px);
 
     span {
         &:first-child {
-            font-size: rem(20px);
+            font-size: vw(20px);
             color: #BDBDBD;
             text-decoration: line-through;
             white-space: nowrap;
+
+            @include desktop {
+                font-size: rem(14px);
+            }
+
+            @include laptop {
+                font-size: rem(20px);
+            }
         }
 
         &:last-child {
-            font-size: rem(30px);
+            font-size: vw(30px);
             color: #6C8FD3;
             font-weight: 500;
             white-space: nowrap;
+
+            @include desktop {
+                font-size: rem(18px);
+            }
+
+            @include laptop {
+                font-size: rem(30px);
+            }
         }
+    }
+
+    @include desktop {
+        font-size: rem(16px);
+    }
+
+    @include laptop {
+        font-size: rem(24px);
     }
 }
 
 .products__wheelchair-img {
-    padding-right: rem(50px);
+    padding-right: vw(50px);
     display: flex;
     align-items: flex-end;
     height: 100%;
-    max-width: 50%;
-   
+    max-width: 60%;
+    min-width: rem(324px);
+    flex-shrink: 0;
+
+    @include phones {
+        min-width: 0;
+    }
 }
 
 .products__wheelchair-pic {
@@ -257,18 +425,17 @@
 .products__oxygen {
     position: relative;
     width: 66.6%;
-    height: 100%;
+    height: 50%;
     padding-bottom: rem(35px);
     background: url("../img/oxygenbg.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
-
     .products__details {
         position: relative;
         font-weight: 500;
-        font-size: rem(20px);
+        font-size: vw(20px);
         text-transform: uppercase;
         color: #fff;
 
@@ -289,6 +456,19 @@
                 right: 0;
             }
         }
+
+        @include laptop {
+            font-size: rem(20px);
+        }
+    }
+
+    @include laptop {
+        height: rem(440px);
+    }
+
+    @include tablets {
+        order: 2;
+        width: 100%;
     }
 }
 
@@ -296,14 +476,14 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    max-width: 45%;
+    max-width: 50%;
 }
 
 .products__oxygen-pic2 {
     position: absolute;
     bottom: 0;
     right: 0;
-    max-width: 30%;
+    max-width: 35%;
 }
 
 .products__oxygen-text {
@@ -320,19 +500,35 @@
 
 .products__oxygen-title {
     font-weight: 700;
-    font-size: rem(26px);
+    font-size: vw(26px);
     margin-bottom: rem(10px);
+
+    @include laptop {
+        font-size: rem(26px);
+    }
+    @include phones {
+       
+        font-size: rem(24px);
+    }
 }
 
 .products__oxygen-desc {
     font-weight: 500;
-    font-size: rem(20px);
+    font-size: vw(20px);
     margin-bottom: auto;
+
+    @include desktop {
+        font-size: rem(14px);
+    }
+
+    @include laptop {
+        font-size: rem(20px);
+    }
 }
 
 .products__wash {
     width: 33.3%;
-    height: 100%;
+    height: 50%;
     padding: rem(10px);
     padding-top: rem(20px);
     padding-bottom: rem(35px);
@@ -343,7 +539,7 @@
 
     .products__details {
         font-weight: 500;
-        font-size: rem(20px);
+        font-size: vw(20px);
         text-transform: uppercase;
         color: #FFD19C;
         position: relative;
@@ -365,27 +561,63 @@
                 right: 0;
             }
         }
+
+        @include laptop {
+            font-size: rem(20px);
+        }
+    }
+
+    @include laptop {
+        height: rem(440px);
+    }
+
+    @include tablets {
+        order: 4;
+        width: 50%;
     }
 }
+
 .products__wash-title {
     font-weight: 500;
-    font-size: rem(24px);
-    color:#FFD19C;
+    font-size: vw(24px);
+    color: #FFD19C;
     margin-bottom: rem(10px);
     text-transform: uppercase;
+    text-align: center;
+
+    @include laptop {
+        font-size: rem(24px);
+    }
 }
 
 .products__wash-text {
     font-weight: 400;
-    font-size: rem(20px);
+    font-size: vw(20px);
     margin-bottom: rem(10px);
     color: #828282;
     text-align: center;
     max-width: 400px;
+
     span {
         white-space: nowrap;
         font-weight: 500;
-        font-size: rem(23px);
-        color:#FFD19C;
+        font-size: vw(23px);
+        color: #FFD19C;
     }
+
+    @include desktop {
+        font-size: rem(14px);
+
+        span {
+            font-size: rem(16px);
+        }
+    }
+
+    @include laptop {
+        font-size: rem(20px);
+    }
+}
+
+.products__wash-pic {
+    max-width: 95%;
 }

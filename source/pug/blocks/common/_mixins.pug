@@ -1,6 +1,7 @@
 //- Навигация
 mixin nav(className, obj, activeItem)
     nav(class=`${className}`)
+        a(href="" class=`${className}__cross` )
         ul(class=`${className}__list`)
             each item, index in obj
                 li(class=`${className}__item` + ((index === activeItem) ? ` ${className}__item_active` : ''))

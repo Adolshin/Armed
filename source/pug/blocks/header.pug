@@ -3,15 +3,11 @@ header.header
     a.header__logo(href="https://www.armed.ru/")
       img.header__logo-img(src='./assets/img/logo.png' alt='Лого')
     a.header__geo(href="#") Москва
-    +nav('navigation', nav, 0)   
+    +nav('navigation', nav, 0)
+    a.header__menu(href="#")    
   .header__row.header__row_bottom
-    .header__catalog Каталог
-      //- ul.header__catalog-popup
-      //-   li.header__catalog-popup-item Пункт1
-      //-   li.header__catalog-popup-item Пункт2
-      //-   li.header__catalog-popup-item Пункт3
-      //-   li.header__catalog-popup-item Пункт4
-    form.header__search(action="" method="post")
+    .header__catalog Каталог  
+    form.header__search(action="")
       input.header__input(type="search" placeholder="Поиск по сайту")
       input.header__input-submit(type="submit" value="")
     .header__contacts
@@ -26,6 +22,7 @@ header.header
       li.header__icons-item
         a.header__basket(href="")
         .header__basket-counter 2
-    .header__profile Личный<br>кабинет
+    a.header__profile(href="#") Личный<br>кабинет
+  
     
            

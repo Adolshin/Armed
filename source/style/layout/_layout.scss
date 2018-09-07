@@ -5,17 +5,14 @@ body {
 
 html {
   font-size: 16px;
-  @include laptop {
-    font-size: .9rem;
-  }
   @include tablets {
-    font-size: .85rem;
+    font-size: 15px;
   }
   @include phones {
-    font-size: .8rem;
+    font-size: 14px;
   }
   @include mini {
-    font-size: .7rem;
+    font-size: 13px;
   }
 }
 
@@ -35,7 +32,8 @@ body {
 .wrapper {
   width: 100%;
   position: relative;
-  min-width: 240px;
+  min-width: 320px;
+  overflow: hidden;
  
  
 }

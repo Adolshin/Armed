@@ -7,9 +7,18 @@
     align-items: center;
     padding: rem(4px) rem(30px);
 
+    @include phones {
+        padding: rem(4px) rem(20px);
+    }
+
     &.header__row_bottom {
         background-color: #F8F8F8;
         padding: rem(13px) rem(30px);
+        position: relative;
+
+        @include phones {
+            padding: rem(13px) rem(20px);
+        }
     }
 }
 
@@ -38,8 +47,34 @@
     }
 }
 
+.navigation {
+    @include tablets {
+        position: absolute;
+        top: 0;
+        right: rem(-300px);
+        transition: .8s;
+      
+        height: rem(250px);
+        @include center;
+        background-color: rgba(255, 255, 255, 1);
+        box-shadow: rgba(0, 0, 0, 0.5) -4px 4px 15px 0px;
+        z-index: 2;
+
+        &.navigation_active {
+            right: 0;
+        }
+    }
+}
+
 .navigation__list {
     display: flex;
+
+    @include tablets {
+        padding: rem(30px) rem(30px);
+        flex-direction: column;
+        align-items: center;
+        font-size: 18px;
+    }
 }
 
 .navigation__item {
@@ -56,6 +91,44 @@
     &:hover {
         color: #C62828;
         transition: .3s;
+    }
+
+    @include tablets {
+        margin-right: 0;
+        margin-bottom: rem(20px);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.navigation__cross {
+    display: none;
+    position: absolute;
+    top: rem(10px);
+    right: rem(10px);
+    width: rem(12px);
+    height: rem(12px);
+    background: url("../img/cross.png");
+    background-size: 100%;
+    background-position: center;
+
+    @include tablets {
+        display: block;
+    }
+}
+
+.header__menu {
+    height: rem(12px);
+    width: rem(18px);
+    background: url("../img/burger.png");
+    background-size: 100%;
+    background-position: center;
+    display: none;
+
+    @include tablets {
+        display: block;
     }
 }
 
@@ -88,30 +161,73 @@
         background-size: 100%;
         background-position: center;
     }
-
-    &:hover {
-        .header__catalog-popup {
-            left: initial;
-            opacity: 1;
-        }
-    }
-}
-
-.header__catalog-popup {
-    position: absolute;
-    top: 0;
-    left: -9999px;
-    opacity: 0;
-    transition: .3s;
 }
 
 .header__search {
     margin-right: rem(28px);
+    margin-left: rem(20px);
     position: relative;
+    max-width: 25%;
+    display: flex;
+
+    @include tablets {
+        &:hover {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            max-width: none;
+            margin: rem(8px);
+            z-index: 1;
+
+            .header__input {
+                opacity: 1;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                top: 0;
+            }
+
+            .header__input-submit {
+                position: absolute;
+                right: rem(10px);
+            }
+        }
+
+        &.header__search_active {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            max-width: none;
+            margin: rem(8px);
+            z-index: 1;
+
+            .header__input {
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                opacity: 1;
+            }
+
+            .header__input-submit {
+                position: absolute;
+                right: rem(10px);
+            }
+        }
+    }
+    @include phones {
+        margin-right: rem(15px);
+        margin-left: rem(15px);
+    }
 }
 
 .header__input {
     width: rem(290px);
+    max-width: 100%;
     height: rem(30px);
     background-color: #fff;
     border: 1px solid #F2F2F2;
@@ -131,13 +247,23 @@
         font-size: rem(12px);
         font-weight: 300;
     }
+
+    @include tablets {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -9999px;
+        opacity: 0;
+        transition: opacity .5s;
+        width: 100%;
+        height: auto;
+    }
 }
 
 .header__input-submit {
     position: absolute;
     right: rem(10px);
-    top: 50%;
-    transform: translateY(-50%);
+    transform: scale(1);
     width: rem(16px);
     height: rem(16px);
     background: url('../img/search.png');
@@ -145,10 +271,15 @@
     background-position: center;
     background-size: 100%;
     transition: .3s;
+    align-self: center;
     cursor: pointer;
 
     &:hover {
-        opacity: .3;
+        transform: scale(1.2);
+    }
+
+    @include tablets {
+        position: static;
     }
 }
 
@@ -157,6 +288,13 @@
     flex-direction: column;
     margin-right: rem(35px);
     white-space: nowrap;
+
+    @include tablets {
+        position: absolute;
+        right: 0;
+        top: 110%;
+        color: #fff;
+    }
 }
 
 .header__phones {
@@ -167,20 +305,32 @@
     display: flex;
     align-items: center;
     margin-right: rem(35px);
+    @include phones {
+        margin-right: rem(20px);
+        
+    }
 }
 
 .header__icons-item {
     margin-right: rem(30px);
     width: rem(24px);
-    height: (24px);
+    height: rem(24px);
     position: relative;
-&:last-child {
-    margin-right: 0;
-}
+
+    &:last-child {
+        margin-right: 0;
+    }
+
     &:hover {
         a {
             transform: scale(1.1);
         }
+    }
+
+    @include phones {
+        margin-right: rem(20px);
+        width: rem(24px);
+        height: rem(24px);
     }
 }
 
@@ -226,6 +376,17 @@
     font-weight: 500;
     border: 1px solid #828282;
 }
+
 .header__profile {
-    color:#000;
+    color: #000;
+
+    @include tablets {
+        font-size: 0;
+        background: url('../img/user.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: rem(40px);
+        height: rem(40px);
+    }
 }

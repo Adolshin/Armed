@@ -1,6 +1,6 @@
 .info {
     width: 100%;
-    height: rem(554px);
+   height: rem(554px);
     background: url("../img/infobg.jpg");
     background-size: cover;
     background-position: center;
@@ -15,12 +15,17 @@
 
 .info__text {
     width: 100%;
-    height: rem(151px);
+    min-height: rem(151px);
     background-color: #fff;
     opacity: .85;
     @include center;
     flex-direction: column;
     margin-bottom: rem(58px);
+    padding: rem(20px) rem(20px);
+    @include phones {
+       
+        margin-bottom: rem(38px);
+    }
 }
 
 .info__title {
@@ -29,12 +34,14 @@
     color: #CA2032;
     text-transform: uppercase;
     margin-bottom: rem(15px);
+    text-align: center;
 }
 
 .info__subtitle {
     font-weight: 400;
     color:#0A1612;
     font-size: rem(24px);
+    text-align: center;
 }
 .info__more, .info__catalog {
     width: rem(190px);
