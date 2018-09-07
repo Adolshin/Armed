@@ -1,5 +1,5 @@
 ﻿
-**Демо**: https://adolshin.github.io/armed/build
+**Демо**: https://adolshin.github.io/Armed/build
 
 
 
